@@ -77,9 +77,3 @@ Anything not filled in yet shows as a visible placeholder (a dashed "To add" blo
 ## Deploy
 
 It is a static site, so any static-capable host works. Vercel is the intended one: import the repo, no environment variables are needed. Set the real domain in `data/site.ts` first (`site.url`), because the canonical tag, Open Graph data, `robots.txt` and the sitemap all derive from it.
-
-## Documentation
-
-Everything about the project is in [`.claude/docs/`](./.claude/docs/README.md): architecture, design system, content model, interactions, accessibility, content rules, decisions and testing.
-
-What is still open (placeholders, missing content, decisions, reminders) is tracked in [`.claude/docs/TODO.md`](./.claude/docs/TODO.md).
