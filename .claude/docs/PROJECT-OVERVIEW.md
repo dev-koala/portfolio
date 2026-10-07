@@ -3,7 +3,7 @@
 ## What this is
 The personal portfolio of **Christabel Amorkor Quaye** ("Chrissy"), based in Accra and Takoradi, Ghana.
 It is a single-page site: a typographic hero, a scroll-driven "teardown" of a product into layers, five
-featured projects, a list of four more, About, Experience, Stack, Currently building and Contact.
+featured projects, a list of three more, About, Experience, Stack, Currently building and Contact.
 Each project opens as a full-screen case study in a native `<dialog>` (no separate pages).
 
 ## Who it is for

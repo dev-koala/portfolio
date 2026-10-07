@@ -1,7 +1,7 @@
 # Project docs (.claude/docs)
 
 Everything about this portfolio, written so that a person or a Claude Code session can pick it up cold.
-Start with **TODO.md**, then read the rest in this order when you need it.
+Start with **TODO.md** (open items and reminders), then read the rest when you need it. The root `README.md` is the plain project readme.
 
 | File | What it answers |
 | --- | --- |

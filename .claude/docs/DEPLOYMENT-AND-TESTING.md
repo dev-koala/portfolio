@@ -25,7 +25,7 @@ These are what were used to verify the rebuild. Playwright is not a dependency o
 
 **Work motion:** scroll each `.proj` into view, wait ~2.5s, screenshot; confirm `.proj.go` count is 5.
 
-**Dialogs:** for `i` in 0..8: click `[data-open="i"]`; assert `dialog#cs[open]`, `#cs-title` text equals the project name, `#cs-art` has a child for projects 0–4 only, `.cs-next button` shows the next project's name (9 loops to 0); press `Escape`; assert `body` no longer has `.lock`.
+**Dialogs:** for `i` in 0..7: click `[data-open="i"]`; assert `dialog#cs[open]`, `#cs-title` text equals the project name, `#cs-art` has a child for projects 0–4 only, `.cs-next button` shows the next project's name (the last loops to 0); press `Escape`; assert `body` no longer has `.lock`.
 
 **Placeholders:** click `.hero a[data-ph]` (Résumé) → `.toast.show` contains "Placeholder: Résumé file not linked yet." Click a `[data-ph]` inside the dialog → the toast **inside** the dialog shows.
 

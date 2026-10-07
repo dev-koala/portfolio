@@ -35,7 +35,7 @@ data/projects.ts ─► CaseStudy.tsx (rendered inside the client dialog from `p
 ## Case-study art: cloned, not re-rendered
 The dialog shows the same drawing as the page. `fillArt()` in `CaseStudyDialog.tsx` finds
 `.proj[data-i="<index>"] [data-art]` and clones that DOM node into `#cs-art`. The clone drops `data-art`, the
-`beacon-svg` id and any parallax transform. Projects without a `[data-art]` element (the four More work entries) show no drawing.
+`beacon-svg` id and any parallax transform. Projects without a `[data-art]` element (the three More work entries) show no drawing.
 This means: **a featured project's section must keep `data-i` on the `<article>` and `data-art` on its drawing.**
 
 ## File map

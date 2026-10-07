@@ -6,7 +6,7 @@
 | File | Controls |
 | --- | --- |
 | `data/site.ts` | Name, title, location, **site URL**, description, hero roles + lead, **links (email, LinkedIn, GitHub, résumé)**, nav items, copyright year |
-| `data/projects.ts` | All nine case studies + the cards of the five featured projects |
+| `data/projects.ts` | All eight case studies + the cards of the five featured projects |
 | `data/teardown.ts` | Teardown heading, hint, aria label, intro card, five layer cards and their "Seen in" project slugs |
 | `data/about.ts` | About paragraphs, "things I enjoy", the depth list, the four principles |
 | `data/experience.ts` | Experience rows (years kept here on purpose) |
