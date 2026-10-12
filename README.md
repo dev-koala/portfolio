@@ -67,7 +67,7 @@ All copy sits in `data/`, not in the components. Edit it there.
 | `data/about.ts`, `experience.ts`, `stack.ts`, `building.ts` | About, Experience, Stack, Currently building |
 | `data/cv.ts` | The CV page and PDF |
 
-Anything not filled in yet shows as a visible placeholder (a dashed "To add" block, or a link that shows a toast), never as invented content.
+Anything not filled in yet is either hidden (empty case-study sections, screenshots, project links) or shown as a link that explains itself in a toast, never as invented content.
 
 ## Accessibility and performance
 

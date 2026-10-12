@@ -4,10 +4,10 @@
  *
  * - `featured` entries (the first five) also get a full-width section in "Selected work".
  *   Entries without it appear in "More work".
- * - Empty arrays / empty strings render a dashed "To add" placeholder block in the
- *   case study, so nothing is ever invented. Fill them in to replace the placeholder.
- * - `notLive` / `internal` / `noArt` change the Links and Screenshots sections of the
- *   case study (see components/case-study/CaseStudy.tsx).
+ * - Empty strings / empty arrays (and missing `links` / `images`) hide that section of the
+ *   case study, so nothing is ever invented. What is still missing is listed in
+ *   .claude/docs/TODO.md; filling the field here makes the section appear.
+ * - `notLive` / `internal` change the Links section (see components/case-study/CaseStudy.tsx).
  */
 export type Decision = { h: string; i: string[] };
 
@@ -28,12 +28,14 @@ export type Project = {
   type: string;
   /** Free text shown in the caption and the case-study meta ("Selected Work", "In Development"...). */
   status: string;
-  /** Not live yet: the case study says "Not live yet" instead of a placeholder link. */
+  /** Not live yet: if a repository link is shown, the live link reads "Not live yet". */
   notLive?: boolean;
-  /** Internal AmaliTech product: link rows say "Internal, not public" / "Private". */
+  /** Internal AmaliTech product: never shows links, even if some are set. */
   internal?: boolean;
-  /** There is no drawing for this project: the screenshots block says "Real screenshots, once you have them." */
-  noArt?: boolean;
+  /** Real URLs only. No links → no "Links" section in the case study. */
+  links?: { live?: string; repo?: string };
+  /** Screenshots, files in public/work/<slug>/. None → no "Screenshots" section. */
+  images?: { src: string; alt: string; width: number; height: number }[];
   builtLabel: string;
   built: string[];
   builtNote?: string;
@@ -342,7 +344,7 @@ export const projects: Project[] = [
     challenges: [
       "Understanding and mapping an organisation that still relies heavily on paper-based processes, and working out how those workflows can translate into software.",
     ],
-    learned: [], // TODO: add once there is something to say (shows a "To add" block)
+    learned: [], // TODO: add once there is something to say (section is hidden until then)
     featured: {
       lead: "A digital transformation for Dolphins Swim Center in Takoradi. I’m mapping how the organisation runs today, largely on paper, and planning how those workflows move into software, alongside building the frontend. It isn’t live yet.",
       facts: [
@@ -363,7 +365,6 @@ export const projects: Project[] = [
     role: "Frontend lead",
     type: "Frontend · CMS · Performance",
     status: "Selected Work",
-    noArt: true,
     builtLabel: "Built with",
     built: ["Next.js", "Sanity CMS"],
     lead: "The AmaliTech corporate website, rebuilt from WordPress to Next.js and Sanity CMS. I led frontend delivery and kept working on its usability, performance, SEO structure and code quality.",
@@ -417,7 +418,12 @@ export const projects: Project[] = [
       "Making the navigation easier for editors meant simplifying its configuration without losing behaviour, so I refactored it and added tests around the modal.",
       "Keeping the experience steady while heavier components load meant pairing lazy loading with skeleton layouts.",
     ],
-    learned: [],
+    learned: [
+      "Small implementation decisions can have a big impact on the overall experience, so performance, component behaviour and maintainability need to be considered together.",
+      "Refactoring is more reliable when existing behaviour is preserved and supported by tests, rather than relying on manual verification alone.",
+      "Lazy loading works best when paired with skeleton layouts, keeping the experience responsive while heavier components load.",
+      "Good frontend engineering balances performance, maintainability and user experience rather than optimising one at the expense of the others.",
+    ],
   },
   {
     slug: "ai-content-generation-poc",
@@ -426,7 +432,6 @@ export const projects: Project[] = [
     role: "Business analyst and developer",
     type: "Client engagement · AI · Discovery",
     status: "Selected Work",
-    noArt: true,
     builtLabel: "Key pieces",
     built: ["Gemini", "Live search", "Streamed generation", "Version history"],
     lead: "A proof of concept for Academy Sports + Outdoors that helps editors write SEO-focused content: it researches, drafts with Gemini, streams the result back and keeps version history.",
@@ -483,7 +488,6 @@ export const projects: Project[] = [
     role: "Product Owner",
     type: "Product · Finance · Internal Analytics",
     status: "Selected Work",
-    noArt: true,
     internal: true,
     builtLabel: "Data sources",
     built: ["QuickBooks reporting", "Structured Excel data (Phase 1)"],

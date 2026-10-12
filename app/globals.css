@@ -2230,16 +2230,14 @@ dialog.cs::backdrop {
   color: var(--muted);
   border-bottom: 1px dashed var(--faint);
 }
-.phb {
-  border: 1px dashed var(--faint);
-  padding: 14px 16px;
-  font-size: 0.95rem;
-  color: var(--muted);
-  max-width: 34em;
+.cs-shots {
+  display: grid;
+  gap: 16px;
 }
-.phb b {
-  color: var(--accent);
-  margin-right: 0.5em;
+.cs-shots img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
 }
 .cs-links {
   display: flex;
