@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { site } from "@/data/site";
+import { usePathname } from "next/navigation";
 
 /** Section ids that have a link in the nav, used to set aria-current. */
 const LINKABLE = site.nav.map((n) => n.href.slice(1));
@@ -21,6 +22,8 @@ export function Nav() {
   const openRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const firstOpen = useRef(true);
+  const onHome = usePathname() === "/";
+  const to = (href: string) => (onHome ? href : `/${href}`);
 
   useEffect(() => {
     const secs = Array.from(document.querySelectorAll<HTMLElement>("[data-sec]"));
@@ -39,7 +42,7 @@ export function Nav() {
           if (LINKABLE.includes(s.id)) lk = s.id;
         }
       });
-      if (atEnd) {
+      if (atEnd && secs.length) {
         cur = secs[secs.length - 1];
         lk = "contact";
       }
@@ -114,7 +117,11 @@ export function Nav() {
     <>
       <header className={`nav${scrolled ? " s" : ""}`} id="nav">
         <div className="nav-in">
-          <a className="brand" href="#top" aria-label={`${site.name}, back to top`}>
+          <a
+            className="brand"
+            href={onHome ? "#top" : "/"}
+            aria-label={`${site.name}, back to top`}
+          >
             {site.name}
           </a>
           <p className="now" id="now" aria-hidden="true">
@@ -131,8 +138,8 @@ export function Nav() {
             {site.nav.map((n) => (
               <a
                 key={n.href}
-                href={n.href}
-                aria-current={current === n.href.slice(1) ? "true" : "false"}
+                href={to(n.href)}
+                aria-current={onHome && current === n.href.slice(1) ? "true" : "false"}
               >
                 {n.label}
               </a>
@@ -169,7 +176,7 @@ export function Nav() {
         </div>
         <nav aria-label="Mobile">
           {site.nav.map((n) => (
-            <a key={n.href} href={n.href} onClick={() => closeMenu(false)}>
+            <a key={n.href} href={to(n.href)} onClick={() => closeMenu(false)}>
               {n.label}
             </a>
           ))}

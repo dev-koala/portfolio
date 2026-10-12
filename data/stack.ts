@@ -8,7 +8,7 @@ export const stack: { group: string; items: string[] }[] = [
     group: "Styling & UI",
     items: ["Tailwind", "SCSS", "Styled Components", "MUI", "Ant Design", "shadcn/ui"],
   },
-  { group: "Backend", items: ["Node.js", "Fastify", "REST APIs", "PostgreSQL", "Prisma"] },
+  { group: "Backend", items: ["Node.js", "Express", "Fastify", "REST APIs", "PostgreSQL", "Prisma"] },
   { group: "CMS", items: ["Sanity", "Storyblok"] },
   {
     group: "Tools",

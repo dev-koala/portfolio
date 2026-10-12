@@ -33,8 +33,10 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/christabel-quaye-780a1a1a9/",
     /** TODO: swap for the new GitHub account once it is linked. This is the old one. */
     github: "https://github.com/Cherrybe",
-    /** TODO: the résumé. Drop the PDF in /public and set e.g. "/christabel-quaye-cv.pdf". */
-    resume: null as string | null,
+    /** The résumé page on this site. Set to `null` to fall back to a placeholder link. */
+    resume: "/cv" as string | null,
+    /** The downloadable PDF. Put the file in /public with this exact name. */
+    resumePdf: "/christabel-quaye-cv.pdf",
   },
   /** Shown as the visible label of the contact rows. */
   display: {
