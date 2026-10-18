@@ -9,7 +9,7 @@ export type CvEntry = {
   org: string;
   place: string;
   when: string;
-  /** Current title line, e.g. "Full-Stack Technical Product Owner & Frontend Engineer". */
+  /** Current title line, e.g. "Technical Product Owner & Frontend Engineer". */
   title: string;
   titleWhen?: string;
   /** Short strapline under the title. */
@@ -30,17 +30,31 @@ export const cv = {
   headline: "Technical Product Owner | Software Engineer",
   location: "Ghana (open to remote)",
   summary:
-    "Technical Product Owner and software engineer with five years at AmaliTech, moving from frontend delivery to owning internal data products and client discovery work. I take a problem from discovery and requirements through backlog, delivery and stakeholder validation, and I can build the frontend and API work myself. Strongest in React, Next.js, Vue and Nuxt, with hands-on Node.js, PostgreSQL and headless CMS experience.",
+    "Technical Product Owner and software engineer with five years at AmaliTech, moving from frontend delivery to owning internal data products and client discovery work. I take a problem from discovery and requirements through backlog, delivery and stakeholder validation, and I can build the frontend and API work myself. Strongest in React, Next.js, Vue and Nuxt, with hands-on Node.js, PostgreSQL and headless CMS experience, and now working full-stack in PHP and Laravel.",
   experience: [
+    {
+      org: "PGES",
+      place: "Accra, Ghana (remote)",
+      when: "Oct 2026 – Present",
+      title: "Junior Full-Stack Engineer, contract",
+      groups: [
+        {
+          heading: "",
+          bullets: [
+            "Full-stack development in PHP and Laravel across several applications.",
+            "Working on platforms that let companies and individuals manage their pensions, savings and investments, including a USSD flow connected to a mobile network.",
+          ],
+        },
+      ],
+    },
     {
       org: "AmaliTech",
       place: "Takoradi, Ghana",
       when: "Aug 2021 – Present",
-      title: "Full-Stack Technical Product Owner & Frontend Engineer",
-      titleWhen: "Nov 2025 – Present",
+      title: "Technical Product Owner & Frontend Engineer",
       focus: "Product ownership • Internal analytics products • Frontend engineering",
       earlier:
-        "Earlier at AmaliTech: Internship Trainee (Aug 2021 – Nov 2022) · National Service Personnel (Nov 2022 – Oct 2023) · Junior Associate (Nov 2023 – Sep 2024) · Associate (Oct 2024 – Nov 2025)",
+        "Grade: Associate (Oct 2024 – Present). Earlier: Internship Trainee (Aug 2021 – Nov 2022) · National Service Personnel (Nov 2022 – Oct 2023) · Junior Associate (Nov 2023 – Sep 2024)",
       groups: [
         {
           heading: "Product: internal analytics products",
@@ -126,7 +140,7 @@ export const cv = {
     ["Product tools", "Jira, Confluence, Figma, Power BI"],
     ["Languages", "TypeScript, JavaScript, HTML5, CSS3, SCSS"],
     ["Frontend", "React, Next.js, Vue.js, Nuxt.js, Tailwind CSS, Styled Components"],
-    ["Backend", "Node.js, Fastify, REST API design, JWT and RBAC, Zod"],
+    ["Backend", "Node.js, Fastify, PHP, Laravel, REST API design, JWT and RBAC, Zod"],
     ["Data", "PostgreSQL, Prisma, database migrations"],
     [
       "AI and automation",

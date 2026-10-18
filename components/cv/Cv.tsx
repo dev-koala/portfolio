@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cv } from "@/data/cv";
+import { cv, type CvEntry } from "@/data/cv";
 import { site } from "@/data/site";
 import { SmartLink } from "@/components/ui/SmartLink";
 
@@ -44,7 +44,7 @@ export function Cv() {
       <section className="g cv-sec" aria-labelledby="cv-exp">
         <h2 id="cv-exp">Experience</h2>
         <div className="cv-body">
-          {cv.experience.map((e) => (
+          {(cv.experience as CvEntry[]).map((e) => (
             <div className="cv-entry" key={e.org}>
               <h3>
                 {e.org}
@@ -54,10 +54,10 @@ export function Cv() {
               </h3>
               <p className="cv-title">
                 <b>{e.title}</b>
-                {"titleWhen" in e && e.titleWhen ? <span> · {e.titleWhen}</span> : null}
+                {e.titleWhen ? <span> · {e.titleWhen}</span> : null}
               </p>
-              {"focus" in e && e.focus ? <p className="cv-focus">{e.focus}</p> : null}
-              {"earlier" in e && e.earlier ? <p className="cv-earlier">{e.earlier}</p> : null}
+              {e.focus ? <p className="cv-focus">{e.focus}</p> : null}
+              {e.earlier ? <p className="cv-earlier">{e.earlier}</p> : null}
               {e.groups.map((g) => (
                 <div className="cv-grp" key={g.heading || e.org}>
                   {g.heading ? <h4>{g.heading}</h4> : null}

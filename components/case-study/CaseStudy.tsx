@@ -31,10 +31,9 @@ function Points({ items }: { items: string[] }) {
  */
 export function CaseStudy({ p, onClose }: { p: Project; onClose: () => void }) {
   const i = projectIndex(p.slug);
-  const prevIdx = (i - 1 + projects.length) % projects.length;
-  const nextIdx = (i + 1) % projects.length;
-  const prev = projects[prevIdx];
-  const next = projects[nextIdx];
+  // A sequence with ends, not a loop: the first has no "Previous", the last no "Next".
+  const prev = i > 0 ? projects[i - 1] : null;
+  const next = i < projects.length - 1 ? projects[i + 1] : null;
   const live = p.internal ? undefined : p.links?.live;
   const repo = p.internal ? undefined : p.links?.repo;
 
@@ -178,18 +177,22 @@ export function CaseStudy({ p, onClose }: { p: Project; onClose: () => void }) {
       ) : null}
 
       <nav className="g cs-next" aria-label="More case studies">
-        <div className="prev">
-          <small>Previous project</small>
-          <button type="button" data-open={prevIdx}>
-            <Arrow /> {prev.name}
-          </button>
-        </div>
-        <div className="nxt">
-          <small>Next project</small>
-          <button type="button" data-open={nextIdx}>
-            {next.name} <Arrow />
-          </button>
-        </div>
+        {prev && (
+          <div className="prev">
+            <small>Previous project</small>
+            <button type="button" data-open={i - 1}>
+              <Arrow /> {prev.name}
+            </button>
+          </div>
+        )}
+        {next && (
+          <div className="nxt">
+            <small>Next project</small>
+            <button type="button" data-open={i + 1}>
+              {next.name} <Arrow />
+            </button>
+          </div>
+        )}
       </nav>
     </>
   );

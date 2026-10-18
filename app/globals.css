@@ -1498,6 +1498,9 @@ button {
   margin-top: 0.5em;
 }
 .phone .ph {
+  display: block;
+  padding: 0;
+  border: 0;
   margin-top: 1em;
   height: 34%;
   background: var(--ink);
@@ -2078,12 +2081,20 @@ dialog.cs::backdrop {
   margin: 0;
   aspect-ratio: 16/10;
 }
+@media (max-width: 759px) {
+  .cs-art > .art.a-dol {
+    aspect-ratio: 4/3;
+  }
+}
 .cs-art > .art.a-volt {
   aspect-ratio: 16/10;
 }
-/* On the page the phone hangs below the pool; in the dialog that would cover the Overview. */
+/* In the dialog the drawing is full width: a smaller phone that stays inside the pool, clear of
+   the browser mockup and the Overview below. */
 .cs-art > .art.a-dol .phone {
-  bottom: 6%;
+  left: 5%;
+  bottom: 9%;
+  width: 16%;
 }
 .cs-art > .art.a-beacon {
   height: auto;
@@ -2299,6 +2310,50 @@ dialog.cs::backdrop {
 }
 .cs-next .prev button:hover .i {
   transform: scaleX(-1) translateX(0.2em);
+}
+
+/* Back to top: fixed bottom right; hidden (with JS) until the hero has scrolled away. */
+.to-top {
+  position: fixed;
+  right: max(16px, calc(var(--gx) - 24px));
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 22px);
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0.6em 1.4em -0.6em rgba(5, 10, 60, 0.6);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s,
+    transform 0.4s var(--ease);
+}
+.to-top .i {
+  width: 20px;
+  height: 20px;
+  transform: rotate(-90deg);
+}
+.to-top:hover {
+  transform: translateY(-3px);
+}
+.to-top:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.js .to-top:not(.show) {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .to-top,
+  .js .to-top:not(.show),
+  .to-top:hover {
+    transform: none;
+  }
 }
 
 .toast {

@@ -5,6 +5,7 @@ import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import { Stack } from "@/components/Stack";
 import { Teardown } from "@/components/teardown/Teardown";
+import { ToTop } from "@/components/ui/ToTop";
 import { Work } from "@/components/work/Work";
 
 /** Section order matters: the nav's "current section" readout follows DOM order of [data-sec]. */
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Stack />
       <Building />
       <Contact />
+      <ToTop />
     </>
   );
 }
