@@ -3201,6 +3201,7 @@ dialog.cs::backdrop {
   .toast,
   .cv-actions,
   .cv-back,
+  .to-top,
   dialog {
     display: none !important;
   }

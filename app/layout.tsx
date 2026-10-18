@@ -8,6 +8,7 @@ import { CaseStudyDialog } from "@/components/case-study/CaseStudyDialog";
 import { Enhance } from "@/components/Enhance";
 import { Nav } from "@/components/Nav";
 import { Toast } from "@/components/Toast";
+import { ToTop } from "@/components/ui/ToTop";
 import { SvgSprite } from "@/components/ui/SvgSprite";
 
 const title = `${site.name} | ${site.title}`;
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <CaseStudyDialog />
         <Toast scope="page" />
+        <ToTop />
         <Enhance />
       </body>
     </html>

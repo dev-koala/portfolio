@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { initPage } from "@/lib/enhance";
 import { TOAST_EVENT } from "./Toast";
 
@@ -11,6 +12,9 @@ import { TOAST_EVENT } from "./Toast";
  * Beacon SVG contents, none of which React manages.
  */
 export function Enhance() {
+  // Re-run on every route change: the layout (and this component) survives client-side navigation,
+  // but the page DOM the scripts are wired to does not.
+  const pathname = usePathname();
   useEffect(() => {
     const cleanup = initPage();
     const onClick = (e: MouseEvent) => {
@@ -27,6 +31,6 @@ export function Enhance() {
       cleanup();
       document.removeEventListener("click", onClick);
     };
-  }, []);
+  }, [pathname]);
   return null;
 }

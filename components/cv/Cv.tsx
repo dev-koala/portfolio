@@ -1,15 +1,15 @@
-import Link from "next/link";
 import { cv, type CvEntry } from "@/data/cv";
 import { site } from "@/data/site";
 import { SmartLink } from "@/components/ui/SmartLink";
+import { BackLink } from "./BackLink";
 
-/** The résumé page (/cv). Server component, no scripts. Print styles make "Save as PDF" clean. */
+/** The résumé page (/cv). Server component; only the back link is a client component. Print styles make "Save as PDF" clean. */
 export function Cv() {
   return (
     <article className="cv" aria-labelledby="cv-h">
       <header className="g cv-head">
         <p className="cv-back">
-          <Link href="/">← Back to portfolio</Link>
+          <BackLink />
         </p>
         <h1 id="cv-h">{cv.name}</h1>
         <p className="cv-role">{cv.headline}</p>

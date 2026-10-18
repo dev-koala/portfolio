@@ -22,7 +22,8 @@ export function Nav() {
   const openRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const firstOpen = useRef(true);
-  const onHome = usePathname() === "/";
+  const pathname = usePathname();
+  const onHome = pathname === "/";
   const to = (href: string) => (onHome ? href : `/${href}`);
 
   useEffect(() => {
@@ -62,7 +63,7 @@ export function Nav() {
       window.removeEventListener("scroll", queue);
       window.removeEventListener("resize", queue);
     };
-  }, []);
+  }, [pathname]); // re-collect [data-sec] after client-side navigation
 
   const closeMenu = useCallback((restoreFocus: boolean) => {
     setMenu(false);
