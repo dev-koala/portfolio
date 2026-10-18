@@ -32,7 +32,7 @@ export function Work() {
         </h2>
         <p className="intro fd" style={d(2)}>
           Five projects, shown the way I think about them: as a system, a route, a ledger, a set of
-          modules, a map of paper-based work. Three more below, from AmaliTech and client work. The
+          modules, a map of paper-based work. Three more below, from internal and client work. The
           stack comes later. It matters less.
         </p>
       </div>

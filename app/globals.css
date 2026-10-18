@@ -976,11 +976,6 @@ button {
   font-weight: 400;
   color: var(--faint);
 }
-.ledger .note {
-  margin-top: 14px;
-  font-size: 0.84rem;
-  color: var(--faint);
-}
 @media (min-width: 900px) {
   .staff .ptext {
     grid-column: 1/6;
@@ -2086,6 +2081,10 @@ dialog.cs::backdrop {
 .cs-art > .art.a-volt {
   aspect-ratio: 16/10;
 }
+/* On the page the phone hangs below the pool; in the dialog that would cover the Overview. */
+.cs-art > .art.a-dol .phone {
+  bottom: 6%;
+}
 .cs-art > .art.a-beacon {
   height: auto;
   aspect-ratio: 16/9;
@@ -2260,6 +2259,16 @@ dialog.cs::backdrop {
   margin-top: clamp(36px, 5vw, 72px);
   padding-block: clamp(26px, 4vw, 48px) clamp(48px, 6vw, 96px);
   border-top: 1px solid var(--ink);
+  row-gap: clamp(28px, 4vw, 48px);
+}
+@media (min-width: 760px) {
+  .cs-next .prev {
+    grid-column: 1/7;
+  }
+  .cs-next .nxt {
+    grid-column: 7/-1;
+    text-align: right;
+  }
 }
 .cs-next small {
   display: block;
@@ -2268,7 +2277,8 @@ dialog.cs::backdrop {
 }
 .cs-next button {
   font-weight: 500;
-  font-size: clamp(2rem, 6vw, 5.4rem);
+  font-size: clamp(2rem, 4.4vw, 4.4rem);
+  text-align: inherit;
   line-height: 0.92;
   letter-spacing: -0.05em;
   display: inline-flex;
@@ -2283,6 +2293,12 @@ dialog.cs::backdrop {
 }
 .cs-next button:hover .i {
   transform: translateX(0.2em);
+}
+.cs-next .prev .i {
+  transform: scaleX(-1);
+}
+.cs-next .prev button:hover .i {
+  transform: scaleX(-1) translateX(0.2em);
 }
 
 .toast {
@@ -2711,12 +2727,6 @@ dialog.cs::backdrop {
   }
   .rows li:nth-child(4) {
     --r: 3;
-  }
-  .js .staff:not(.go) .ledger .note {
-    opacity: 0;
-  }
-  .staff .ledger .note {
-    transition: opacity 0.8s ease 1.4s;
   }
   /* Beacon */
   .beacon .lines path {

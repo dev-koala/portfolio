@@ -76,9 +76,6 @@ export function StaffingSection() {
               ),
             )}
           </ul>
-          <p className="note">
-            Values left blank on purpose. I’m not putting numbers here that I can’t show.
-          </p>
         </div>
       </div>
     </article>

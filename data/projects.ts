@@ -140,9 +140,9 @@ export const projects: Project[] = [
     type: "Product · Data · Internal Analytics",
     status: "Selected Work",
     builtLabel: "Platform context",
-    built: ["BigQuery", "Power BI", "Jira"],
+    built: ["Power BI", "Jira", "Entra"],
     builtNote:
-      "The platforms the product sits on. They’re context for the work, not part of my engineering stack.",
+      "The platforms the product sits on. Entra is an in-house application management tool (not Microsoft Entra ID). They’re context for the work, not part of my engineering stack.",
     lead: "An internal product that follows a staffing request from creation to fulfilment.",
     problem:
       "Staffing requests move through several tools and teams, so understanding where a request stands, or whether it’s on track, meant piecing together information from more than one source.",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
         ["Role", "Product Owner / technical product work"],
         [
           "Platform",
-          "BigQuery, Power BI and Jira. The platforms it sits on, not my engineering stack.",
+          "Power BI, Jira and Entra, an in-house application management tool. The platforms it sits on, not my engineering stack.",
         ],
       ],
     },
