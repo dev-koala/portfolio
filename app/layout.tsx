@@ -10,11 +10,11 @@ import { Nav } from "@/components/Nav";
 import { Toast } from "@/components/Toast";
 import { SvgSprite } from "@/components/ui/SvgSprite";
 
-const title = `${site.name} — ${site.title}`;
+const title = `${site.name} | ${site.title}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: `${site.name} — Portfolio`, template: `%s — ${site.name}` },
+  title: { default: `${site.name} | Portfolio`, template: `%s | ${site.name}` },
   description: site.description,
   alternates: { canonical: "/" },
   openGraph: {

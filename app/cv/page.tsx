@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "CV",
   description: `${cv.name}: ${cv.headline}. Experience, selected projects, skills and education.`,
   alternates: { canonical: "/cv" },
-  openGraph: { url: "/cv", title: `CV — ${cv.name}` },
+  openGraph: { url: "/cv", title: `CV | ${cv.name}` },
 };
 
 export default function CvPage() {

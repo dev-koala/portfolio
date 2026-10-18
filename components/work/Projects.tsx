@@ -71,7 +71,7 @@ export function StaffingSection() {
                 <li key={label}>
                   <span>{label}</span>
                   <i></i>
-                  <b>—</b>
+                  <b>–</b>
                 </li>
               ),
             )}

@@ -27,7 +27,7 @@ export const site = {
     "Product & Systems",
   ],
   heroLead:
-    "I work across the product — from understanding the problem and shaping requirements to building the interfaces, APIs and systems behind them.",
+    "I work across the product, from understanding the problem and shaping requirements to building the interfaces, APIs and systems behind them.",
   links: {
     email: "qchristabel5@gmail.com",
     linkedin: "https://www.linkedin.com/in/christabel-quaye-780a1a1a9/",
