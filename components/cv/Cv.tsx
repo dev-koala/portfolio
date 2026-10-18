@@ -15,6 +15,7 @@ export function Cv() {
         <p className="cv-role">{cv.headline}</p>
         <p className="cv-meta">
           <a href={`mailto:${site.links.email}`}>{site.links.email}</a>
+          <a href={site.url}>{site.url.replace(/^https?:\/\//, "")}</a>
           <span>{cv.location}</span>
           <SmartLink href={site.links.linkedin} placeholder="LinkedIn link not set yet">
             LinkedIn

@@ -12,15 +12,10 @@ export const site = {
   title: "Software Engineer / Technical Product Owner",
   location: "Based in Accra and Takoradi, Ghana",
   /**
-   * Production URL. Drives canonical, sitemap, robots and Open Graph. No custom domain yet, so on
-   * Vercel it uses the project's production domain (`*.vercel.app`, set by Vercel at build time).
-   * When a domain is bought, set NEXT_PUBLIC_SITE_URL in Vercel (or replace this with the URL).
+   * Production URL. Drives canonical, sitemap, robots, Open Graph, and the link on /cv and the PDF.
+   * When a custom domain is bought, set NEXT_PUBLIC_SITE_URL in Vercel (or change the default here).
    */
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000"),
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://christabel-quaye.vercel.app",
   description:
     "Christabel Quaye is a software engineer and technical product owner in Accra, Ghana. She works between Accra and Takoradi, across the product from requirements to the interfaces, APIs and systems behind it.",
   socialDescription: "Software engineer and technical product owner. Interfaces, APIs and systems.",
