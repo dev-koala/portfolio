@@ -12,10 +12,15 @@ export const site = {
   title: "Software Engineer / Technical Product Owner",
   location: "Based in Accra and Takoradi, Ghana",
   /**
-   * TODO: the real production URL. Drives canonical, sitemap, robots and Open Graph.
-   * Still the placeholder because no domain has been bought yet.
+   * Production URL. Drives canonical, sitemap, robots and Open Graph. No custom domain yet, so on
+   * Vercel it uses the project's production domain (`*.vercel.app`, set by Vercel at build time).
+   * When a domain is bought, set NEXT_PUBLIC_SITE_URL in Vercel (or replace this with the URL).
    */
-  url: "https://example.com",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   description:
     "Christabel Quaye is a software engineer and technical product owner in Accra, Ghana. She works between Accra and Takoradi, across the product from requirements to the interfaces, APIs and systems behind it.",
   socialDescription: "Software engineer and technical product owner. Interfaces, APIs and systems.",
@@ -31,7 +36,7 @@ export const site = {
   links: {
     email: "qchristabel5@gmail.com",
     linkedin: "https://www.linkedin.com/in/christabel-quaye-780a1a1a9/",
-    /** TODO: swap for the new GitHub account once it is linked. This is the old one. */
+    /** The older account, kept on purpose until the new one has some activity (then swap both here and `display.github`). */
     github: "https://github.com/Cherrybe",
     /** The résumé page on this site. Set to `null` to fall back to a placeholder link. */
     resume: "/cv" as string | null,
@@ -40,9 +45,8 @@ export const site = {
   },
   /** Shown as the visible label of the contact rows. */
   display: {
-    linkedin: "in/christabel-quaye",
+    linkedin: "in/christabel-quaye-780a1a1a9",
     github: "github.com/Cherrybe",
-    resume: "[add résumé link]",
   },
   nav: [
     { label: "Work", href: "#work" },

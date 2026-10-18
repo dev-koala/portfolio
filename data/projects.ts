@@ -139,6 +139,7 @@ export const projects: Project[] = [
     role: "Product Owner, technical product work",
     type: "Product · Data · Internal Analytics",
     status: "Selected Work",
+    internal: true,
     builtLabel: "Platform context",
     built: ["Power BI", "Jira", "Entra"],
     builtNote:
@@ -344,7 +345,7 @@ export const projects: Project[] = [
     challenges: [
       "Understanding and mapping an organisation that still relies heavily on paper-based processes, and working out how those workflows can translate into software.",
     ],
-    learned: [], // TODO: add once there is something to say (section is hidden until then)
+    learned: [], // empty on purpose: the section stays hidden until there is something to say
     featured: {
       lead: "A digital transformation for Dolphins Swim Center in Takoradi. I’m mapping how the organisation runs today, largely on paper, and planning how those workflows move into software, alongside building the frontend. It isn’t live yet.",
       facts: [

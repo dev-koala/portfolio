@@ -27,7 +27,7 @@ export const experience: ExperienceEntry[] = [
   {
     when: "2025 to 2026",
     org: ["Studio Freight /", "Scale Army"],
-    role: "Frontend / CMS Engineer",
+    role: "Frontend / CMS Developer, contract",
     focus:
       "Frontend development, CMS integrations, React / Next.js, Vue / Nuxt, Sanity, Storyblok and reusable frontend architecture.",
   },

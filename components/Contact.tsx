@@ -81,7 +81,7 @@ export function Contact() {
             </SmartLink>
             <SmartLink href={links.resume} placeholder="Résumé file not linked yet">
               <span>Resume</span>
-              <b>{links.resume ? "View résumé" : display.resume}</b>
+              <b>View résumé</b>
             </SmartLink>
           </div>
         </div>
