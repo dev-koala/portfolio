@@ -10,13 +10,14 @@ export type ExperienceEntry = {
 };
 
 export const experience: ExperienceEntry[] = [
-  {
-    when: "2026 to now",
-    org: ["PGES"],
-    role: "Junior Full-Stack Engineer, contract",
-    focus:
-      "PHP and Laravel across several applications: platforms for companies and individuals to manage their pensions, savings and investments, and a USSD flow.",
-  },
+  // PGES hidden for now; uncomment to show it again.
+  // {
+  //   when: "2026 to now",
+  //   org: ["PGES"],
+  //   role: "Junior Full-Stack Engineer, contract",
+  //   focus:
+  //     "PHP and Laravel across several applications: platforms for companies and individuals to manage their pensions, savings and investments, and a USSD flow.",
+  // },
   {
     when: "2021 to now",
     org: ["AmaliTech"],

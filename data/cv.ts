@@ -29,24 +29,27 @@ export const cv = {
   name: "Christabel Amorkor Quaye",
   headline: "Technical Product Owner | Software Engineer",
   location: "Ghana (open to remote)",
+  // While PGES is hidden, the summary ends before ", and now working full-stack in PHP and Laravel."
+  // Put that clause back when the PGES entry below is uncommented.
   summary:
-    "Technical Product Owner and software engineer with five years at AmaliTech, moving from frontend delivery to owning internal data products and client discovery work. I take a problem from discovery and requirements through backlog, delivery and stakeholder validation, and I can build the frontend and API work myself. Strongest in React, Next.js, Vue and Nuxt, with hands-on Node.js, PostgreSQL and headless CMS experience, and now working full-stack in PHP and Laravel.",
+    "Technical Product Owner and software engineer with five years at AmaliTech, moving from frontend delivery to owning internal data products and client discovery work. I take a problem from discovery and requirements through backlog, delivery and stakeholder validation, and I can build the frontend and API work myself. Strongest in React, Next.js, Vue and Nuxt, with hands-on Node.js, PostgreSQL and headless CMS experience.",
   experience: [
-    {
-      org: "PGES",
-      place: "Accra, Ghana (remote)",
-      when: "Oct 2026 – Present",
-      title: "Junior Full-Stack Engineer, contract",
-      groups: [
-        {
-          heading: "",
-          bullets: [
-            "Full-stack development in PHP and Laravel across several applications.",
-            "Working on platforms that let companies and individuals manage their pensions, savings and investments, including a USSD flow connected to a mobile network.",
-          ],
-        },
-      ],
-    },
+    // PGES hidden for now; uncomment to show it again.
+    // {
+    //   org: "PGES",
+    //   place: "Accra, Ghana (remote)",
+    //   when: "Oct 2026 – Present",
+    //   title: "Junior Full-Stack Engineer, contract",
+    //   groups: [
+    //     {
+    //       heading: "",
+    //       bullets: [
+    //         "Full-stack development in PHP and Laravel across several applications.",
+    //         "Working on platforms that let companies and individuals manage their pensions, savings and investments, including a USSD flow connected to a mobile network.",
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       org: "AmaliTech",
       place: "Takoradi, Ghana",
